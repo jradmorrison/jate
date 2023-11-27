@@ -12,10 +12,50 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
-export const putDb = async (content) => console.error('putDb not implemented');
+// Exports a function to POST to the database.
+export const putDb = async (content) => {
+  console.log("Post to the database");
 
-// TODO: Add logic for a method that gets all the content from the database
-export const getDb = async () => console.error('getDb not implemented');
+  // Creates a connection to the database and version.
+  const jateDb = await openDB("jate", 1);
+
+  // Creates a new transaction and specifies the database and data privileges.
+  const tx = jateDb.transaction("jate", "readwrite");
+
+  // Opens up the desired object store.
+  const store = tx.objectStore("jate");
+
+  // Uses the .put() method on the store and passes in the content.
+  const request = store.put({ id: 1, jate: content });
+
+  // Gets confirmation of the request.
+  const result = await request;
+  console.log("Data saved to the database:", result.values);
+};
+
+// Exports a function to get the database.
+export const getDb = async () => {
+  console.log("Get all notes from the database");
+
+  // Creates a connection to the jate database and version.
+  const jateDb = await openDB("jate", 1);
+
+  // Creates a new transaction and specifies the database and data privileges.
+  const tx = jateDb.transaction("jate", "readonly");
+
+  // Opens up the desired object store.
+  const store = tx.objectStore("jate");
+
+  // Uses the .get(1) method to retrieve the value of the first record matching the query.
+
+  const request = store.get(1);
+
+  // Gets confirmation of the request.
+  const result = await request;
+  result
+    ? console.log("Notes retrieved from database:", result.jate)
+    : console.log("No notes found in database!");
+  return result?.jate;
+};
 
 initdb();
