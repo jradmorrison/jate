@@ -59,7 +59,7 @@
 
 J.A.T.E. is a simple text editor web app that runs in the browser and meets PWA criteria. It features different data persistance techniques to reduntently save inputted content in the event one of the options is not supported by the chosen browser. J.A.T.E. can also function offline with it's use of caching. 
 
-<img src="./assets/screenshot2.png" height="350px"><img src="./assets/screenshot1.png" height="350px">
+<img src="./assets/screenshot2.png" height="325px"><img src="./assets/screenshot1.png" height="325px">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
