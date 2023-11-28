@@ -31,7 +31,6 @@ module.exports = () => {
         short_name: "J.A.T.E",
         description: "A simple text editor",
         favicon: "./favicon.ico",
-        // Theme and background color pulled from duotone-light.min.css
         background_color: "#faf8f5",
         theme_color: "#1F1F1F",
         start_url: "/",
