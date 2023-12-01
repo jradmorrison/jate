@@ -35,7 +35,7 @@
   <p align="center">
     Just Another Text Editor
     <br><br>
-    <a href="" target="_blank">Visit the deployed app here!</a>
+    <a href="https://jate-tad7.onrender.com/" target="_blank">Visit the deployed app here!</a>
   </p>
 </div>
 
